@@ -1,0 +1,24 @@
+---
+- name: Check if wp-cli is already installed
+  stat:
+    path: "{{ wp_cli_path }}"
+  register: _wp_cli
+
+- name: Download wp-cli package
+  get_url:
+    dest: /tmp/wp-cli.phar
+    mode: 0755
+    url: https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
+  when: not _wp_cli.stat.exists
+
+- name: Move wp-cli into its final location
+  command: mv /tmp/wp-cli.phar {{ wp_cli_path }}
+  args:
+    creates: "{{ wp_cli_path }}"
+  when: not _wp_cli.stat.exists
+
+- name: Update wp-cli to latest version (if configured)
+  command: php {{ wp_cli_path }} update
+  register: wp_cli_update
+  changed_when: "'WordPress updated successfully' in wp_cli_update.stdout"
+  when: wp_cli_keep_updated | bool
