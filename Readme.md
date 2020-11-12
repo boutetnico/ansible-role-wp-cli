@@ -1,3 +1,6 @@
+[![tests](https://github.com/boutetnico/ansible-role-wp-cli/workflows/Test%20ansible%20role/badge.svg)](https://github.com/boutetnico/ansible-role-wp-cli/actions?query=workflow%3A%22Test+ansible+role%22)
+[![Ansible Galaxy](https://img.shields.io/badge/galaxy-boutetnico.wp_cli-blue.svg)](https://galaxy.ansible.com/boutetnico/wp_cli)
+
 ansible-role-wp-cli
 ===================
 
@@ -6,7 +9,7 @@ This role installs and configures [WP-CLI](https://wp-cli.org/).
 Requirements
 ------------
 
-Ansible 2.6 or newer.
+Ansible 2.7 or newer.
 
 Supported Platforms
 -------------------
@@ -19,10 +22,10 @@ Supported Platforms
 Role Variables
 --------------
 
-| Variable            | Required | Default             | Choices   | Comments                                      |
-|---------------------|----------|---------------------|-----------|-----------------------------------------------|
-| wp_cli_path         | true     | `/usr/local/bin/wp` | string    |                                               |
-| wp_cli_keep_updated | true     | `false`             | bool      |                                               |
+| Variable            | Required | Default             | Choices   | Comments                                 |
+|---------------------|----------|---------------------|-----------|------------------------------------------|
+| wp_cli_path         | true     | `/usr/local/bin/wp` | string    |                                          |
+| wp_cli_keep_updated | true     | `false`             | bool      |                                          |
 
 Dependencies
 ------------
