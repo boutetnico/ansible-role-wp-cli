@@ -7,10 +7,10 @@ driver:
   name: docker
 
 platforms:
-  - name: ansible-role-wp-cli-debian-9
-    image: debian:9
   - name: ansible-role-wp-cli-debian-10
     image: debian:10
+  - name: ansible-role-wp-cli-debian-11
+    image: debian:11
   - name: ansible-role-wp-cli-ubuntu-1804
     image: ubuntu:18.04
   - name: ansible-role-wp-cli-ubuntu-2004
