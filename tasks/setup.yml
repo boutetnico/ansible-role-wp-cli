@@ -18,7 +18,7 @@
   when: not _wp_cli.stat.exists
 
 - name: Update wp-cli to latest version (if configured)
-  command: php {{ wp_cli_path }} update
+  command: php {{ wp_cli_path }} cli update --yes
   register: wp_cli_update
   changed_when: "'WordPress updated successfully' in wp_cli_update.stdout"
   when: wp_cli_keep_updated | bool
