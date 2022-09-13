@@ -3,4 +3,4 @@
   hosts: all
 
   roles:
-    - role: ansible-role-wp-cli
+    - role: boutetnico.wp_cli
