@@ -7,7 +7,7 @@
 - name: Download wp-cli package
   ansible.builtin.get_url:
     dest: /tmp/wp-cli.phar
-    mode: 0755
+    mode: "0755"
     url: https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
   when: not _wp_cli.stat.exists
 
