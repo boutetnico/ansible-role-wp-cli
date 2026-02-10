@@ -2,5 +2,12 @@
 - name: Converge
   hosts: all
 
+  pre_tasks:
+    - name: Install PHP CLI dependency
+      ansible.builtin.apt:
+        name: php-cli
+        state: present
+        update_cache: true
+
   roles:
     - role: boutetnico.wp_cli
